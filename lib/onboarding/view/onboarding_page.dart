@@ -48,11 +48,7 @@ class _OnboardingViewState extends State<_OnboardingView> {
                       children: const [
                         _Page(
                           gsUrl: 'https://i.ibb.co/wds0Jyf/image-3.png',
-                          description:
-                              'Amet minim mollit non deserunt ullamco est sit'
-                              ' aliqua dolor do amet sint. Velit officia'
-                              ' consequat duis enim velit mollit. Exercitation'
-                              ' veniam consequat sunt nostrud amet.',
+                          description: 'Test',
                           title: 'Sample text',
                         ),
                         _Page(
@@ -209,7 +205,10 @@ class _Page extends StatelessWidget {
         SizedBox(
           width: 260,
           height: 222,
-          child: Image.network(gsUrl),
+          child: Image.network(
+            gsUrl,
+            errorBuilder: (_, __, ___) => const SizedBox(),
+          ),
         ),
         const SizedBox(
           height: 21,

@@ -26,7 +26,7 @@ class ContactRepository {
 
   void deleteContact(String id) {
     _contacts.removeWhere((element) => element.id == id);
-
+    removeSelectedContact(id);
     _controller.add([..._contacts]);
   }
 
